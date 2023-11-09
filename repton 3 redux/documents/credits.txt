@@ -1,0 +1,25 @@
++-----------------------------------------------------------------+
+| repton 3 redux credits                                          |
+|-----------------------------------------------------------------|
+| programming: matthew atkinson                                   |
+| level designs for prelude, toccata and finale:                  |
+| tim tyler, matthew atkinson, richard hanson                     |
+|-----------------------------------------------------------------|
+| all programmers ultimately stand on the shoulders of others to  |
+| produce their projects and this one is no different so here is  |
+| a resources list that proved invaluable to this project         |
+|-----------------------------------------------------------------|
+| beebem bbc emulator                                             |
+| http://www.mkw.me.uk/beebem/                                    |
+|                                                                 |
+| identity table used to synthesise "new" 6502 instructions       |
+| https://www.nesdev.org/wiki/Identity_table                      |
+|                                                                 |
+| beebasm by rich talbot-watkins                                  |
+| http://www.retrosoftware.co.uk/wiki/index.php?title=beebasm     |
+|                                                                 |
+| 6502 compresor/decompressor for zx02 files                      |
+| https://github.com/dmsc/zx02                                    |
+|-----------------------------------------------------------------|
+| thanks to millie tamara daniels and mark west for testing       |
++-----------------------------------------------------------------+

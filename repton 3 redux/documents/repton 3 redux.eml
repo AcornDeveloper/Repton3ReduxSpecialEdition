@@ -1,0 +1,1239 @@
+Delivered-To: aristarchus.parallax@gmail.com
+Received: by 2002:a05:7108:22b8:b0:326:137e:1828 with SMTP id j24csp714471gdb;
+        Thu, 31 Aug 2023 21:43:27 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGUIDQY4DhclDelS7Jr1nX5DepUYKOsR98KKXA6g2kSv6ppo3TMcCfKdw0yniQG3Ikm3nJY
+X-Received: by 2002:a05:620a:294b:b0:767:954:a743 with SMTP id n11-20020a05620a294b00b007670954a743mr2022934qkp.51.1693543406787;
+        Thu, 31 Aug 2023 21:43:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1693543406; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lwMKCcm6lZddlSe4uNN8LQVVBe1AAc5zdDUl1pu1k9+2oE5pzygRmbu2I1/XEz3zG+
+         Ng+2zwjNxggMqEMYEOtCL7+ZfP2fDi8jOC3f5wecZn06482jR/AxQzwDUXyPIukX7kqm
+         pZWz0RasVIAqmHJaZKqesMb27JGjfpxSG2TNXx6ME53KVb3I/BKeeoCFiDCuMdaZIinN
+         I5yGxK6Ygo+VYzft0Kgihk2QIOQbARnWfDMfqpWcYvLxuH65klCBkmiXxLTG5bmqVB35
+         GcY9PpMPGn8CgcYKaTCMbxlLaWXg/ACf995oaQdetSjDm9XDZASqQxTRdDPzMcMHrH7a
+         PLew==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-language:thread-index:mime-version:message-id:date:subject
+         :in-reply-to:references:to:from:dkim-signature;
+        bh=imYtnHpmzUE6bT64qi3Cf4TsgDKI/ekZnHTnZ66t+gg=;
+        fh=OkNQxPiJ2VsVCdiC8ej0kFIz6z1EGw68nYrRC1uzJ88=;
+        b=p35KDZgeMiA2JDqGf0eTu0+auDAmqF+KltIvQ1Wu1vVfAYcyTfrGSuZ3TkenwhkBwf
+         yaiT0KNnDqGJjKvnhZoUQIoJjptqq8Quy6IUUM+DUfq1wrEmYxgHnoo8jD8sU3DHc+WG
+         geudn2TMENY4wN62AC97TgYf3powXO5L/4lKIBNHI+nM+Tvyq0FpXDs2PFkWHesadq62
+         SahSPP4DsgMiT8Mgm1ETxN9AVqwZ5PxvXxgOMBlUHN7OnnK+UeZZqqVltVV9zW7jFpQZ
+         Uey5jehB7L5Kn0CaeMiFukYDkmUet61HDVn72wHNb5u+SuTzMxUOKU/iHZFIUFbWZ8Vv
+         xFvA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=fail header.i=@superiorinteractive.com header.s=default header.b=bHVYoq5l;
+       spf=pass (google.com: domain of richard@superiorinteractive.com designates 44.202.169.37 as permitted sender) smtp.mailfrom=richard@superiorinteractive.com
+Return-Path: <richard@superiorinteractive.com>
+Received: from omta038.useast.a.cloudfilter.net (omta038.useast.a.cloudfilter.net. [44.202.169.37])
+        by mx.google.com with ESMTPS id s13-20020a05620a254d00b00767d62f3e9fsi1835291qko.599.2023.08.31.21.43.26
+        for <aristarchus.parallax@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 31 Aug 2023 21:43:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of richard@superiorinteractive.com designates 44.202.169.37 as permitted sender) client-ip=44.202.169.37;
+Authentication-Results: mx.google.com;
+       dkim=fail header.i=@superiorinteractive.com header.s=default header.b=bHVYoq5l;
+       spf=pass (google.com: domain of richard@superiorinteractive.com designates 44.202.169.37 as permitted sender) smtp.mailfrom=richard@superiorinteractive.com
+Received: from eig-obgw-6002a.ext.cloudfilter.net ([10.0.30.222])
+	by cmsmtp with ESMTP
+	id bfGNqAmadWU1cbw0DqY8jn; Fri, 01 Sep 2023 04:43:26 +0000
+Received: from box5857.bluehost.com ([162.241.24.83])
+	by cmsmtp with ESMTPS
+	id bw0CqoTKsp4nAbw0CqmY6x; Fri, 01 Sep 2023 04:43:25 +0000
+X-Authority-Analysis: v=2.4 cv=AI0h59Ht c=1 sm=1 tr=0 ts=64f16bed
+ a=BBd85AXe0EvXHOt9/Iz1PA==:117 a=BBd85AXe0EvXHOt9/Iz1PA==:17
+ a=OWjo9vPv0XrRhIrVQ50Ab3nP57M=:19 a=dLZJa+xiwSxG16/P+YVxDGlgEgI=:19
+ a=UttIx32zK-AA:10 a=cEzfNSXdqmwA:10 a=DAwyPP_o2Byb1YXLmDAA:9
+ a=e4Kb41A4QvhmisDxyDgA:9 a=QEXdDO2ut3YA:10 a=yMhMjlubAAAA:8 a=SSmOFEACAAAA:8
+ a=u37jnXb-VgvwREXrc3wA:9 a=QPWy6FMFWQUANTZQ:21 a=gKO2Hq4RSVkA:10
+ a=UiCQ7L4-1S4A:10 a=hTZeC7Yk6K0A:10 a=frz4AuCg-hUA:10 a=LpnVYPqXAAAA:8
+ a=MB5mTBgijrM2IXA01GcA:9 a=m-Z_27IZkzAA:10 a=RVmHIydaz68A:10
+ a=oZc8tTBoaZw7_u_o9KQA:9 a=gvfuPi_lK2Fv4vHjZPsA:9 a=eBxvNUGymAK2iPNAFksA:9
+ a=J7YgmyUEgHTy2t1BUF2e:22
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=superiorinteractive.com; s=default; h=Content-Type:MIME-Version:Message-ID:
+	Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=imYtnHpmzUE6bT64qi3Cf4TsgDKI/ekZnHTnZ66t+gg=; b=bHVYoq5l5ezwcHmLa0bL5HOU8J
+	aGqSOj2yIr0S9RHIX/eu/YinEALk3c633yBN7XhrgQ9eS+MKbNlLKg7YHp0T1h7FadKMj5q9Pks05
+	ywoDv1nCNHS9eqaCaxgrEQ1f4;
+Received: from host86-190-143-27.range86-190.btcentralplus.com ([86.190.143.27]:52480 helo=DESKTOPRG70FHI)
+	by box5857.bluehost.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <richard@superiorinteractive.com>)
+	id 1qbw0B-002naM-0n
+	for aristarchus.parallax@gmail.com;
+	Thu, 31 Aug 2023 22:43:24 -0600
+From: "Superior Interactive" <richard@superiorinteractive.com>
+To: "'Matthew Atkinson'" <aristarchus.parallax@gmail.com>
+References: <000001d98fc7$d13d0000$73b70000$@superiorinteractive.com> <8f7a1a4b-b7da-63d2-555d-fdec8aee9201@gmail.com>
+In-Reply-To: <8f7a1a4b-b7da-63d2-555d-fdec8aee9201@gmail.com>
+Subject: Repton 3 Redux
+Date: Fri, 1 Sep 2023 05:43:24 +0100
+Message-ID: <003001d9dc8e$d8c6e340$8a54a9c0$@superiorinteractive.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_000_0031_01D9DC97.3A8CAAD0"
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AdncbsXB+QpbeV5+TD61eYcVj8MsUw==
+Content-Language: en-gb
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - box5857.bluehost.com
+X-AntiAbuse: Original Domain - gmail.com
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - superiorinteractive.com
+X-BWhitelist: no
+X-Source-IP: 86.190.143.27
+X-Source-L: No
+X-Exim-ID: 1qbw0B-002naM-0n
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: host86-190-143-27.range86-190.btcentralplus.com (DESKTOPRG70FHI) [86.190.143.27]:52480
+X-Source-Auth: richard@superiorinteractive.com
+X-Email-Count: 1
+X-Org: HG=bhshared;ORG=bluehost;
+X-Source-Cap: amF6enlsaW87amF6enlsaW87Ym94NTg1Ny5ibHVlaG9zdC5jb20=
+X-Local-Domain: yes
+X-CMAE-Envelope: MS4xfIgh0c3gfGWZiA0wvV++hUIy4RU5YSHoyCMxRnJIcDemXa81dk9043zoBWG/I4WReOp4SeOiu4Kp/vWaFNRoGffHa4EKb2ctGzOHmCSuga2HxltHpNwa
+ XEGPmY394fgLrRh6ct8G40oMdcgU8wp5Ouah3jOMZ7RO4jF/5CHpQWdTyzfw7uizua+Qa8Jt6MBwVVX1Jd0rOAVRvt3FepubjVPzz+AYVXfbKDnzgx/x+9kA
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_0031_01D9DC97.3A8CAAD0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_001_0032_01D9DC97.3A8CD1E0"
+
+
+------=_NextPart_001_0032_01D9DC97.3A8CD1E0
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Matthew,
+
+=20
+
+I=E2=80=99m very impressed with the Repton 3 Redux.  The game certainly =
+looks great and plays smoothly.
+
+=20
+
+There are just a few points to mention:
+
+=20
+
+*	On the game=E2=80=99s main menu screen, the copyright message is shown =
+as:
+
+(c) Superior Software Ltd. 1986
+
+(c) Superior Interactive 2023
+
+=20
+
+Superior Software Ltd is still in business (making it one of the =
+longest-running games software companies), and Superior Interactive is a =
+trading name of Superior Software Ltd.  So I suggest the following =
+copyright message, please:
+
+  (c) Superior Software Ltd /
+
+Superior Interactive, 1986-2023
+
+=20
+
+*	The BBC Micro versions of =E2=80=98Around the World in 40 =
+Screens=E2=80=99, =E2=80=98The Life of Repton=E2=80=99 and =
+=E2=80=98Repton Thru Time=E2=80=99 use a modified game engine (in =
+comparison to the original =E2=80=98Repton 3=E2=80=99 game engine) =
+=E2=80=93 the algorithm for determining the spirits=E2=80=99 direction =
+of movement at the start of a level is different.  I expect you have =
+probably allowed for this already in the Repton 3 Redux game code, but I =
+thought I should mention this just to be sure =E2=80=93 otherwise some =
+of the levels might be impossible to complete.
+
+=20
+
+*	In the readme.txt file, the "around the world in 40 screens" level =
+sets should ideally be arranged in their original order, which is based =
+on the increasing difficulty of each set: "america", "arctic", "orient", =
+"oceans", "africa".  Then "the life of repton" comes before "repton thru =
+time" in chronological order.  I would like a copyright message and =
+website link to be included at the end of this file, please.  For =
+convenience, I have attached my suggested modified readme.txt file.
+
+=20
+
+*	The order of the level sets for "around the world in 40 screens" =
+similarly applies to the PASSWRD file.  Also, the edit code for PRELUDE =
+B needs changing from 48042 to 44544.  Again, for convenience, I have =
+attached my suggested modified file: PASSWRD.
+
+=20
+
+*	At the top of the CREDITS file, I think we should list your name as =
+the programmer; followed by Tim Tyler, you and me for Prelude, Toccata =
+and Finale level designs.  I have attached my suggested CREDITS file.
+
+=20
+
+*	When I looked at the LICENCE file, I was expecting it would be a =
+Repton 3 Redux licence file, whereas it seems to be a licence for BSD?  =
+So I think it would be wise, please, to add a separate section at the =
+top of this file specifically regarding Repton 3 Redux.  I have attached =
+my suggested LICENCE file.
+
+=20
+
+Please send me the modified Repton 3 Redux ssd file, and I look forward =
+to playing more of the levels when I have time.
+
+=20
+
+> On a side note Dave Moore (Arcadian) of the Acorn User Group might =
+want to put this out as a physical release. If you would be okay with =
+this then I'll tell him to get in touch.
+
+=20
+
+Please ask Dave to contact me if he would like to put it out as a =
+physical release.  I=E2=80=99m provisionally interested, but the details =
+would need to be agreed before release.
+
+=20
+
+Best wishes,
+
+Richard
+
+=20
+
+
+------=_NextPart_001_0032_01D9DC97.3A8CD1E0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta =
+http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8"><meta =
+name=3DGenerator content=3D"Microsoft Word 15 (filtered =
+medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+span.EmailStyle19
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:152256552;
+	mso-list-template-ids:504106178;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:428427738;
+	mso-list-template-ids:-767525650;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:537620785;
+	mso-list-template-ids:-1976421634;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:835917535;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2087501144 -746801044 134807555 134807557 =
+134807553 134807555 134807557 134807553 134807555 134807557;}
+@list l3:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:Calibri;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:1811943831;
+	mso-list-template-ids:-486531800;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1918436581;
+	mso-list-template-ids:-2200282;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1923902985;
+	mso-list-template-ids:462860696;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body bgcolor=3Dwhite =
+lang=3DEN-GB link=3D"#0563C1" vlink=3D"#954F72" =
+style=3D'word-wrap:break-word'><div class=3DWordSection1><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>Hi =
+Matthew,<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>I=E2=80=99m =
+very impressed with the Repton 3 Redux.=C2=A0 The game certainly looks =
+great and plays smoothly.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>There are =
+just a few points to mention:<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><ul style=3D'margin-top:0cm' type=3Ddisc><li =
+class=3DMsoListParagraph =
+style=3D'color:windowtext;margin-left:0cm;mso-list:l3 level1 lfo3'><span =
+style=3D'font-family:"Verdana",sans-serif'>On the game=E2=80=99s main =
+menu screen, the copyright message is shown =
+as:<o:p></o:p></span></li></ul><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Courier New";color:windowtext'>(c) Superior =
+Software Ltd. 1986<o:p></o:p></span></p><p =
+class=3DMsoListParagraph><span style=3D'font-family:"Courier =
+New";color:windowtext'>(c) Superior Interactive =
+2023<o:p></o:p></span></p><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Courier =
+New";color:windowtext'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoListParagraph><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>Superior =
+Software Ltd is still in business (making it one of the longest-running =
+games software companies), and Superior Interactive is a trading name of =
+Superior Software Ltd.=C2=A0 So I suggest the following copyright =
+message, please:</span><span style=3D'font-family:"Courier =
+New";color:windowtext'><o:p></o:p></span></p><p =
+class=3DMsoListParagraph><span style=3D'font-family:"Courier =
+New";color:windowtext'>=C2=A0 (c) Superior Software Ltd =
+/<o:p></o:p></span></p><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Courier New";color:windowtext'>Superior =
+Interactive, 1986-2023<o:p></o:p></span></p><p =
+class=3DMsoListParagraph><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><ul style=3D'margin-top:0cm' type=3Ddisc><li =
+class=3DMsoListParagraph =
+style=3D'color:windowtext;margin-left:0cm;mso-list:l3 level1 lfo3'><span =
+style=3D'font-family:"Verdana",sans-serif'>The BBC Micro versions of =
+=E2=80=98Around the World in 40 Screens=E2=80=99, =E2=80=98The Life of =
+Repton=E2=80=99 and =E2=80=98Repton Thru Time=E2=80=99 use a modified =
+game engine (in comparison to the original =E2=80=98Repton 3=E2=80=99 =
+game engine) =E2=80=93 the algorithm for determining the =
+spirits=E2=80=99 direction of movement at the start of a level is =
+different.=C2=A0 I expect you have probably allowed for this already in =
+the Repton 3 Redux game code, but I thought I should mention this just =
+to be sure =E2=80=93 otherwise some of the levels might be impossible to =
+complete.<o:p></o:p></span></li></ul><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><ul style=3D'margin-top:0cm' type=3Ddisc><li =
+class=3DMsoListParagraph =
+style=3D'color:windowtext;margin-left:0cm;mso-list:l3 level1 lfo3'><span =
+style=3D'font-family:"Verdana",sans-serif'>In the readme.txt file, the =
+&quot;around the world in 40 screens&quot; level sets should ideally be =
+arranged in their original order, which is based on the increasing =
+difficulty of each set: &quot;america&quot;, &quot;arctic&quot;, =
+&quot;orient&quot;, &quot;oceans&quot;, &quot;africa&quot;.=C2=A0 Then =
+&quot;the life of repton&quot; comes before &quot;repton thru time&quot; =
+in chronological order.=C2=A0 I would like a copyright message and =
+website link to be included at the end of this file, please.=C2=A0 For =
+convenience, I have attached my suggested modified readme.txt =
+file.<o:p></o:p></span></li></ul><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><ul style=3D'margin-top:0cm' type=3Ddisc><li =
+class=3DMsoListParagraph =
+style=3D'color:windowtext;margin-left:0cm;mso-list:l3 level1 lfo3'><span =
+style=3D'font-family:"Verdana",sans-serif'>The order of the level sets =
+for &quot;around the world in 40 screens&quot; similarly applies to the =
+PASSWRD file.=C2=A0 Also, the edit code for PRELUDE B needs changing =
+from 48042 to 44544.=C2=A0 Again, for convenience, I have attached my =
+suggested modified file: PASSWRD.<o:p></o:p></span></li></ul><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><ul style=3D'margin-top:0cm' type=3Ddisc><li =
+class=3DMsoListParagraph =
+style=3D'color:windowtext;margin-left:0cm;mso-list:l3 level1 lfo3'><span =
+style=3D'font-family:"Verdana",sans-serif'>At the top of the CREDITS =
+file, I think we should list your name as the programmer; followed by =
+Tim Tyler, you and me for Prelude, Toccata and Finale level =
+designs.=C2=A0 I have attached my suggested CREDITS =
+file.<o:p></o:p></span></li></ul><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><ul style=3D'margin-top:0cm' type=3Ddisc><li =
+class=3DMsoListParagraph =
+style=3D'color:windowtext;margin-left:0cm;mso-list:l3 level1 lfo3'><span =
+style=3D'font-family:"Verdana",sans-serif'>When I looked at the LICENCE =
+file, I was expecting it would be a Repton 3 Redux licence file, whereas =
+it seems to be a licence for BSD?=C2=A0 So I think it would be wise, =
+please, to add a separate section at the top of this file specifically =
+regarding Repton 3 Redux.=C2=A0 I have attached my suggested LICENCE =
+file.<o:p></o:p></span></li></ul><p class=3DMsoListParagraph><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>Please send =
+me the modified Repton 3 Redux ssd file, and I look forward to playing =
+more of the levels when I have time.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:#0070C0'><o:p>&nbsp;</o:p=
+></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:#0070C0'>&gt; On a side =
+note Dave Moore (Arcadian) of the Acorn User Group might want to put =
+this out as a physical release. If you would be okay with this then I'll =
+tell him to get in touch.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>Please ask =
+Dave to contact me if he would like to put it out as a physical =
+release.=C2=A0 I=E2=80=99m provisionally interested, but the details =
+would need to be agreed before release.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>Best =
+wishes,<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'>Richard<o:p><=
+/o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Verdana",sans-serif;color:windowtext'><o:p>&nbsp;</=
+o:p></span></p></div></body></html>
+------=_NextPart_001_0032_01D9DC97.3A8CD1E0--
+
+------=_NextPart_000_0031_01D9DC97.3A8CAAD0
+Content-Type: text/plain;
+	name="readme.txt"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+	filename="readme.txt"
+
++-----------------------------------------------------------------+
+| repton 3 redux readme                                           |
+|-----------------------------------------------------------------|
+| target machines  : bbc master 128/master compact                |
+|-----------------------------------------------------------------|
+| main title screen controls                                      |
+|                                                                 |
+| p       - enter password                                        |
+| l       - load map file                                         |
+| d/w     - music on/off                                          |
+| s/q     - sound on/off                                          |
+| k       - select keyboard control                               |
+| j       - select joystick control                               |
+|                                                                 |
+| game controls                                                   |
+|                                                                 |
+| z       - left                                                  |
+| x       - right                                                 |
+| *       - up                                                    |
+| ?       - down                                                  |
+| m       - view map                                              |
+| y       - swap between small map character sets on map          |
+| escape  - respawn yourself                                      |
+| shift-r - restart game                                          |
+|                                                                 |
+| scoring                                                         |
+|                                                                 |
+|  5 points ..... for collecting a diamond                        |
+| 20 points ..... for killing a monster                           |
+| 50 points ..... for collecting a crown                          |
+|                                                                 |
+| game files on disc                                              |
+|-----------------------------------------------------------------|
+| repton 3                                                        |
+|-----------------------------------------------------------------|
+|                                                                 |
+| "prelude"                                                       |
+| "toccata"                                                       |
+| "finale"                                                        |
+|                                                                 |
+|-----------------------------------------------------------------|
+| around the world in 40 screens                                  |
+|-----------------------------------------------------------------|
+|                                                                 |
+| "america"                                                       |
+| "arctic"                                                        |
+| "orient"                                                        |
+| "oceans"                                                        |
+| "africa"                                                        |
+|                                                                 |
+|-----------------------------------------------------------------|
+| the life of repton                                              |
+|-----------------------------------------------------------------|
+|                                                                 |
+| "baby"                                                          |
+| "school"                                                        |
+| "teenage"                                                       |
+| "work"                                                          |
+| "oap"                                                           |
+|                                                                 |
+|-----------------------------------------------------------------|
+| repton thru time                                                |
+|-----------------------------------------------------------------|
+|                                                                 |
+| "prehist"                                                       |
+| "eqypt"                                                         |
+| "victori"                                                       |
+| "now"                                                           |
+| "future"                                                        |
+|                                                                 |
+|-----------------------------------------------------------------|
+| overall changes and bug fixes from the original repton 3        |
+|-----------------------------------------------------------------|
+|                                                                 |
+| title graphic on main screen                                    |
+|                                                                 |
+| title screen colours taken from first map in file               |
+|                                                                 |
+| direct read of keyboard                                         |
+|                                                                 |
+| keys for sound/music/keyboard on title screen debounced         |
+|                                                                 |
+| flicker-free four-way scrolling                                 |
+|                                                                 |
+| repton masked on screen, no xor artifacts                       |
+|                                                                 |
+| monsters/spirits visible during screen reveal                   |
+|                                                                 |
+| map files compressed, backwards compatible with user maps       |
+|                                                                 |
+| repton flashes on map screen for easy location                  |
+|                                                                 |
+| no restriction on viewing maps                                  |
+|                                                                 |
+| custom map characters created for each map file with facility   |
+| to view original and new character sets while viewing map       |
+|                                                                 |
+| faster/improved screen dissolve                                 |
+|                                                                 |
+| repton materialisation sequence added                           |
+|                                                                 |
+| repton moves into skull/fungus and while moving view map/status |
+| then on exit repton dies but removes object on respawn          |
+|                                                                 |
+| various minor text changes in screens, code improvements etc    |
+|                                                                 |
+| see associated CREDITS/VERSION/LICENCE/PASSWRD files            |
+|-----------------------------------------------------------------|
+| change to MODE 0, CTRL-N to scroll lock and then *TYPE CREDITS  |
+| use SHIFT key to page through                                   |
+|-----------------------------------------------------------------|
+|   (c) Superior Software Ltd / Superior Interactive, 1986-2023   |
+|                       All rights reserved.                      |
+|                                                                 |
+|              website: www.superiorinteractive.com               |
++-----------------------------------------------------------------+
+------=_NextPart_000_0031_01D9DC97.3A8CAAD0
+Content-Type: application/octet-stream;
+	name="PASSWRD"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment;
+	filename="PASSWRD"
+
++-----------------------------------------------------------------+=0D| =
+REPTON 3                                                        =
+|=0D+-----------------------------------------------------------------+=0D=
+| PRELUDE          TOCCATA          FINALE                        |=0D| =
+A PRELUDE 56882  A TOCCATA 48042  A FINALE 27246                |=0D| B =
+CITADEL 44544  B UPSTART 6527   B ENLIVEN 24937               |=0D| C =
+MORNING 13330  C OCTAGON 27492  C CONTEST 3200                |=0D| D =
+AWKWARD 33023  D CHAOTIC 20312  D ILLEGAL 19786               |=0D| E =
+FRITTER 24656  E MAJESTY 1356   E APPEASE 3346                |=0D| F =
+LAWLESS 8515   F REVENUE 16713  F STUDENT 20055               |=0D| G =
+RATION  3447   G FORESEE 50190  G AVERAGE 16660               |=0D| H =
+TOBACCO 2303   H RESERVE 65280  H PHOENIX 51762               =
+|=0D+-----------------------------------------------------------------+=0D=
+| AROUND THE WORLD IN 40 SCREENS                                  =
+|=0D+-----------------------------------------------------------------+=0D=
+| AMERICA          ARCTIC           ORIENT                        |      =
+    =0D| A AMERICA 52463  A ARCTIC 25363   A ORIENT 10019                =
+|=0D| B CURTAIN 57036  B DIAMOND 20049  B THRUST 47727                =
+|=0D| C VAMPIRE 2457   C RUBBISH 44028  C COLONEL 29389               =
+|=0D| D CREATED 2560   D MANAGER 10455  D PERSONS 29842               =
+|=0D| E LUNATIC 16961  E PACKAGE 18279  E CRICKET 48573               =
+|=0D| F MAXIMUM 15699  F PRIVATE 43587  F TUNNELS 13365               =
+|=0D| G COMPOSE 56696  G CAPITAL 8380   G INTENSE 34674               =
+|=0D| H COLOURS 10568  H DUNGEON 21510  H GALLERY 36424               =
+|=0D|                                                                 =
+|=0D| OCEANS           AFRICA                                         =
+|=0D| A OCEANS 34645   A AFRICA 53997                                 =
+|=0D| B MAGENTA 44892  B WELCOME 54996                                =
+|=0D| C ELECTED 15334  C WORKING 36857                                =
+|=0D| D DISEASE 14535  D FIREMAN 13942                                =
+|=0D| E THEATRE 14089  E KESTREL 25155                                =
+|=0D| F DREAMER 16710  F REFRACT 26421                                =
+|=0D| G CURRANT 55886  G ADDRESS 39304                                =
+|=0D| H GENERAL 13003  H RECEIVE 51901                                =
+|=0D+-----------------------------------------------------------------+=0D=
+| THE LIFE OF REPTON                                              =
+|=0D+-----------------------------------------------------------------+=0D=
+| BABY             SCHOOL           TEENAGE                       |=0D| =
+A BABY 56882     A SCHOOL 36216   A TEENAGE 61268               |=0D| B =
+KEYHOLE 44287  B ADVANCE 14562  B TURBINE 32854               |=0D| C =
+FAILURE 58847  C BAPTISE 49514  C WEAKEN 51857                |=0D| D =
+GADGETS 24882  D LESSONS 39008  D CHEAPLY 53452               |=0D| E =
+REACTOR 61197  E ZIPPERS 21622  E OVERLAP 22068               |=0D| F =
+REUNION 19047  F BLEAKLY 27442  F PADLOCK 43672               |=0D| G =
+OBSERVE 5067   G CORPSES 4831   G DIALLED 13517               |=0D| H =
+DIVERGE 36440  H ZYGOTES 21882  H CIRCLES 4405 	          |=0D|          =
+                                                       |=0D| WORK        =
+     OAP                                            |=0D| A WORK 21012   =
+  A OAP 20910                                    |=0D| B INCLINE 7014   =
+B UNAWARE 18760                                |=0D| C HOSTAGE 60159  C =
+SOAKING 57020                                |=0D| D TWISTED 9677   D =
+EVOLVES 21489                                |=0D| E TAXABLE 14439  E =
+QUIBBLE 52892                                |=0D| F WARTIME 21383  F =
+NATIVES 30995                                |=0D| G ALGEBRA 57802  G =
+JUMPING 21164                                |=0D| H BETTING 996    H =
+SHALLOW 35064                                =
+|=0D+-----------------------------------------------------------------+=0D=
+| REPTON THRU TIME                                                =
+|=0D+-----------------------------------------------------------------+=0D=
+| PREHIST          EGYPT            VICTORI                       |=0D| =
+A PREHIST 12345  A EGYPT 8473     A VICTORI 54066               |=0D| B =
+HEATERS 16494  B FAVOURS 5012   B MERCURY 57950               |=0D| C =
+HILLOCK 29652  C HAPPENS 48238  C CLEAVER 62809               |=0D| D =
+PILFERS 28262  D PERSONS 2247   D BINDERS 31463               |=0D| E =
+MEDIATE 25655  E CONQUER 31761  E CONFUSE 35584               |=0D| F =
+COMPACT 9761   F EVENING 19495  F JINGLES 10659               |=0D| G =
+CARTOON 43981  G MASTERS 52592  G DOLPHIN 45367               |=0D| H =
+TUBULAR 35862  H PIMPLES 51035  H MINSTER 23180               |=0D|      =
+                                                           |=0D| NOW     =
+         FUTURE                                         |=0D| A NOW =
+54524      A FUTURE 33776                                 |=0D| B =
+OCTAGON 21370  B ORACLES 1119                                 |=0D| C =
+CASTLES 48417  C STAPLER 36126                                |=0D| D =
+CHARLES 9698   D DANCING 46223                                |=0D| E =
+GREATER 58449  E FANCIER 48475                                |=0D| F =
+BOOKLET 23963  F BANANAS 34409                                |=0D| G =
+FUNTIME 64332  G EVEREST 54136                                |=0D| H =
+SAVOURS 29294  H KINGDOM 53546                                =
+|=0D+-----------------------------------------------------------------+
+------=_NextPart_000_0031_01D9DC97.3A8CAAD0
+Content-Type: application/octet-stream;
+	name="CREDITS"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment;
+	filename="CREDITS"
+
++-----------------------------------------------------------------+=0D| =
+repton 3 redux credits                                          =
+|=0D|-----------------------------------------------------------------|=0D=
+| programming: matthew atkinson                                   |=0D| =
+level designs for prelude, toccata and finale:                  |=0D| =
+tim tyler, matthew atkinson, richard hanson                     =
+|=0D|-----------------------------------------------------------------|=0D=
+| all programmers ultimately stand on the shoulders of others to  |=0D| =
+produce their projects and this one is no different so here is  |=0D| a =
+resources list that proved invaluable to this project         =
+|=0D|-----------------------------------------------------------------|=0D=
+| beebem bbc emulator                                             |=0D| =
+http://www.mkw.me.uk/beebem/                                    |=0D|    =
+                                                             |=0D| =
+identity table used to synthesise "new" 6502 instructions       |=0D| =
+https://www.nesdev.org/wiki/Identity_table                      |=0D|    =
+                                                             |=0D| =
+beebasm by rich talbot-watkins                                  |=0D| =
+http://www.retrosoftware.co.uk/wiki/index.php?title=3Dbeebasm     |=0D|  =
+                                                               |=0D| =
+6502 compresor/decompressor for zx02 files                      |=0D| =
+https://github.com/dmsc/zx02                                    =
+|=0D|-----------------------------------------------------------------|=0D=
+| thanks to millie tamara daniels and mark west for testing       =
+|=0D+-----------------------------------------------------------------+
+------=_NextPart_000_0031_01D9DC97.3A8CAAD0
+Content-Type: application/octet-stream;
+	name="LICENCE"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment;
+	filename="LICENCE"
+
++------------------------------------------------------------------------=
+--------+=0D| Repton 3 Redux Licence                                     =
+                    |  =0D| Copyright (c) Superior Software Ltd / =
+Superior Interactive, 1986-2023          |=0D| All rights reserved.      =
+                                                     =
+|=0D+--------------------------------------------------------------------=
+------------+=0D=0D+-----------------------------------------------------=
+---------------------------+=0D| BSD 3-Clause License                    =
+                                       =
+|=0D+--------------------------------------------------------------------=
+------------+=0D| De-compressor for zx02 files =
+https://github.com/dmsc/zx02                      |=0D| Code used =
+https://github.com/dmsc/zx02/blob/main/6502/zx02-optim.asm           =
+|=0D| Decompress zx02 data (6502 optimized format), optimised for speed =
+and size     |=0D| further optimised for 65c02                           =
+                         =
+|=0D+--------------------------------------------------------------------=
+------------+=0D| Copyright (c) 2021, Einar Saukas                       =
+                        |=0D| All rights reserved.                       =
+                                    =
+|=0D+--------------------------------------------------------------------=
+------------+=0D| Redistribution and use in source and binary forms, =
+with or without             |=0D| modification, are permitted provided =
+that the following conditions are met:    |=0D|                          =
+                                                      |=0D| 1. =
+Redistributions of source code must retain the above copyright notice, =
+this |=0D|    list of conditions and the following disclaimer.           =
+                 |=0D|                                                   =
+                             |=0D| 2. Redistributions in binary form =
+must reproduce the above copyright notice,   |=0D|    this list of =
+conditions and the following disclaimer in the documentation   |=0D|    =
+and/or other materials provided with the distribution.                   =
+   |=0D|                                                                 =
+               |=0D| 3. Neither the name of the copyright holder nor the =
+names of its               |=0D|    contributors may be used to endorse =
+or promote products derived from        |=0D|    this software without =
+specific prior written permission.                    |=0D|              =
+                                                                  |=0D| =
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS =
+IS"    |=0D| AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT =
+LIMITED TO, THE      |=0D| IMPLIED WARRANTIES OF MERCHANTABILITY AND =
+FITNESS FOR A PARTICULAR PURPOSE ARE |=0D| DISCLAIMED. IN NO EVENT SHALL =
+THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE   |=0D| FOR ANY DIRECT, =
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL     |=0D| =
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS =
+OR     |=0D| SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS =
+INTERRUPTION) HOWEVER     |=0D| CAUSED AND ON ANY THEORY OF LIABILITY, =
+WHETHER IN CONTRACT, STRICT LIABILITY,  |=0D| OR TORT (INCLUDING =
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE  |=0D| OF =
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.        =
+   =
+|=0D+--------------------------------------------------------------------=
+------------+
+------=_NextPart_000_0031_01D9DC97.3A8CAAD0--
+

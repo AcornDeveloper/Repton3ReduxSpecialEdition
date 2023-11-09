@@ -1,0 +1,16 @@
+https://stardot.org.uk/forums/viewtopic.php?t=1978
+
+For now, here's a summary of the issue. On Repton 3, spirits are set to move south at the start
+of the level; in consequence, a spirit starting with space or earth to its south, east and southeast
+will be dazed. This is what prevents many of the AtW/Life/Time levels being playable if loaded in
+the Repton 3 game engine.
+
+AtW/Life/Time themselves all have an updated game engine in which spirits' initial movement preference
+is more intelligently decided by its environment, so it is impossible for a spirit to start off dazed
+unless it's completely surrounded by empty space. This should mean all levels completable in the Repton 3
+game engine are also completable if loaded with AtW/Life/Time. The only exception is that spirits with
+space on both sides and objects above and below will start off heading the wrong way, which may on some
+levels cause them to go into the wrong cage and render the level uncompletable; however, this would be
+extremely rare. The only level on which this is known to have a noticeable effect is Finale Screen E,
+which if played on the AtW/Life/Time game engine one spirit in the top-left goes in a cage immediately --
+but of course the level is still completable.
